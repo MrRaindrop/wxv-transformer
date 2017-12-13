@@ -17,7 +17,7 @@ function genPropNode (k, v) {
 }
 
 module.exports = {
-  compile (objNode, px2remTags) {
+  compile (objNode, px2remTags, px2remOptsNode) {
     const props = objNode.properties
     let hasLines = false
     for (let i = 0, l = props.length; i < l; i++) {
@@ -38,7 +38,7 @@ module.exports = {
             type: 'Identifier',
             name: '_px2rem'
           },
-          arguments: [valNode, { type: 'Literal', value: 75 }]
+          arguments: [valNode, px2remOptsNode]
         }
       }
     }
